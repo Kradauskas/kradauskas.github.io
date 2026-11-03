@@ -1,0 +1,694 @@
+/**
+ * VILNIUS TECH – Skriptinis programavimas – 2026
+ * 9 laboratorinis darbas: CSS stilių kūrimas ir naudojimas
+ * Studentas: Kristupas Radauskas (kradauskas.github.io)
+ * Failas: assets/css/custom.css
+ */
+
+/* ==========================================================================
+   1. ŠRIFTŲ IMPORTAS IR TIPOGRAFIJA (Privaloma užduotis 2 punktas)
+   ========================================================================== */
+
+/* Modernių Google Fonts šriftų importas:
+   - 'Plus Jakarta Sans' pagrindiniam tekstui (labai skaitomas, modernus sans-serif)
+   - 'Outfit' antraštėms (stilingas, geometriškas, reprezentatyvus)
+   - 'JetBrains Mono' kodui ir skaitinėms reikšmėms
+*/
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+  /* Naujos šriftų šeimos */
+  --custom-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --custom-font-heading: 'Outfit', sans-serif;
+  --custom-font-mono: 'JetBrains Mono', monospace;
+
+  /* Atnaujinta moderni spalvų paletė su dideliu kontrastu */
+  --custom-primary: #0284c7;       /* Ryški vandenyno mėlyna */
+  --custom-primary-dark: #0369a1;  /* Tamsesnė mėlyna hover būsenoms */
+  --custom-primary-light: #e0f2fe; /* Švelni pastelinė mėlyna akcentams */
+  --custom-text-main: #0f172a;     /* Tamsi skalūno spalva (aukštas kontrastas) */
+  --custom-text-muted: #334155;    /* Subtili, bet aiškiai skaitoma teksto spalva */
+  --custom-bg-card: #ffffff;
+  --custom-border-color: #e2e8f0;
+}
+
+/* 2.a. Svetainės šrifto šeimos pakeitimas */
+body {
+  font-family: var(--custom-font-sans) !important;
+  color: var(--custom-text-main);
+  background-color: #f8fafc;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+
+/* 2.b. Antraščių stiliai (h1-h6): skirtingi dydžiai, storiai, spalvos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--custom-font-heading) !important;
+  color: var(--custom-text-main);
+  letter-spacing: -0.025em;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.85rem !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.035em !important;
+}
+
+h2 {
+  font-size: 2.15rem !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  color: #1e293b !important;
+  letter-spacing: -0.02em !important;
+}
+
+h3 {
+  font-size: 1.55rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  color: #0f172a !important;
+}
+
+h4 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  color: #1e293b !important;
+}
+
+h5 {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--custom-primary-dark) !important;
+}
+
+h6 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #64748b !important;
+}
+
+/* Sekcijų pagrindinės antraštės vizualinis atnaujinimas */
+.section-title h2 {
+  font-size: 2.3rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  color: #0f172a !important;
+}
+
+.section-title h2::after {
+  content: "" !important;
+  position: absolute !important;
+  display: block !important;
+  width: 60px !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, var(--custom-primary), #38bdf8) !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  border-radius: 4px !important;
+}
+
+/* 2.c. Pastraipų stiliaus atnaujinimas */
+p {
+  font-size: 1.025rem !important;
+  line-height: 1.78 !important;
+  color: var(--custom-text-muted) !important;
+  margin-bottom: 1.25rem !important;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   2. KOMPONENTŲ STILIAI: MYGTUKAI IR NUORODOS (Privaloma užduotis 3 punktas)
+   ========================================================================== */
+
+/* 3.a. Mygtukai ir jų pseudo-klasės (:hover, :active) */
+button,
+.btn,
+.php-email-form button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--custom-font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 13px 32px !important;
+  border-radius: 12px !important;
+  border: 1px solid transparent !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, var(--custom-primary) 0%, var(--custom-primary-dark) 100%) !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  outline: none;
+}
+
+/* Mygtuko :hover būsena */
+button:hover,
+.btn:hover,
+.php-email-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #0284c7 0%, #075985 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.45) !important;
+  color: #ffffff !important;
+}
+
+/* Mygtuko :active būsena */
+button:active,
+.btn:active,
+.php-email-form button[type="submit"]:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25) !important;
+}
+
+/* 3.b. Nuorodos ir jų :hover stilius */
+a {
+  color: var(--custom-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+a:hover {
+  color: var(--custom-primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Socialinių tinklų nuorodos (Hero ir Footer) */
+.hero .social-links a,
+.footer .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  border: 1px solid var(--custom-border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
+
+.hero .social-links a:hover,
+.footer .social-links a:hover {
+  background: var(--custom-primary);
+  color: #ffffff !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4);
+}
+
+/* ==========================================================================
+   3. ELEMENTŲ IŠDĖSTYMAS IR TARPAI (Privaloma užduotis 4 punktas)
+   ========================================================================== */
+
+/* 4.a. Tarpų keitimas (margin ir padding) „Apie”, „Patirtis”, „Atlikti darbai” */
+#about {
+  padding-top: 85px !important;
+  padding-bottom: 95px !important;
+  background-color: #ffffff;
+}
+
+#about .content {
+  padding: 30px 35px !important;
+  margin-top: 5px;
+}
+
+#resume {
+  padding-top: 90px !important;
+  padding-bottom: 100px !important;
+  background-color: #f8fafc;
+}
+
+#resume .resume-title {
+  margin-top: 35px !important;
+  margin-bottom: 25px !important;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--custom-border-color);
+}
+
+#portfolio {
+  padding-top: 90px !important;
+  padding-bottom: 105px !important;
+  background-color: #ffffff;
+}
+
+#portfolio .portfolio-filters {
+  margin-bottom: 45px !important;
+  padding: 10px 18px !important;
+  gap: 14px;
+}
+
+/* 4.b. Turinio blokų išvaizdos patobulinimas: kraštinės, užapvalinimai (border-radius), šešėliai (box-shadow) */
+
+/* „Apie“ sekcijos profilio nuotrauka */
+#about img.rounded {
+  border-radius: 20px !important;
+  border: 4px solid #ffffff;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12) !important;
+  transition: transform 0.3s ease;
+}
+
+#about img.rounded:hover {
+  transform: scale(1.02);
+}
+
+/* „Apie“ informacinė kortelė */
+#about .content {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid var(--custom-border-color);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+/* „Patirtis“ (Resume) elementų blokai */
+.resume-item {
+  background: #ffffff;
+  padding: 24px 28px !important;
+  margin-bottom: 24px !important;
+  border-radius: 0 16px 16px 0 !important;
+  border-left: 4px solid var(--custom-primary) !important;
+  border-top: 1px solid #f1f5f9;
+  border-right: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.resume-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.1) !important;
+}
+
+.resume-item h5 {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--custom-primary-light);
+  color: var(--custom-primary-dark) !important;
+  border-radius: 6px;
+  font-family: var(--custom-font-mono) !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px;
+}
+
+/* Portfolio kortelės */
+.portfolio-item {
+  border-radius: 16px !important;
+  overflow: hidden;
+  border: 1px solid var(--custom-border-color);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  transition: all 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+}
+
+/* Paslaugų / informacijos / multimedijos blokai */
+.service-item,
+.services .card,
+.contact .info-item {
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  border: 1px solid var(--custom-border-color) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05) !important;
+  padding: 24px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover,
+.services .card:hover,
+.contact .info-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(2, 132, 199, 0.12) !important;
+}
+
+/* ==========================================================================
+   4. DVIEJŲ PASIRINKTŲ KOMPONENTŲ STILIAI (Privaloma užduotis 5 punktas)
+   Pasirinkti komponentai:
+   1) Progreso juostos (.progress, .progress-bar-wrap, .progress-bar)
+   2) „Į viršų“ mygtukas (#scroll-top)
+   Papildomai: Navigacijos juostos patobulinimas (.navmenu)
+   Kiekvienam pakeista bent po 3 savybes: fonas, kraštinės, užapvalinimai, šešėliai.
+   ========================================================================== */
+
+/* 1 KOMPONENTAS: Progreso juostos (Skills / Gebėjimai) */
+.skills .progress {
+  height: 24px !important;
+  background: transparent !important;
+  margin-bottom: 24px;
+}
+
+.skills .progress .skill {
+  font-family: var(--custom-font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--custom-text-main);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills .progress .skill .val {
+  font-family: var(--custom-font-mono);
+  font-weight: 700;
+  color: var(--custom-primary);
+}
+
+/* Progreso juostos rėmelis / konteineris */
+.skills .progress-bar-wrap {
+  background: #e2e8f0 !important;                               /* 1 savybė: naujas fonas */
+  height: 14px !important;                                      /* 2 savybė: aukštis / tarpai */
+  border-radius: 9999px !important;                             /* 3 savybė: pilnas užapvalinimas */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08) !important;  /* 4 savybė: vidinis šešėlis */
+  border: 1px solid #cbd5e1 !important;                         /* 5 savybė: kraštinė */
+  overflow: hidden;
+  padding: 1px;
+}
+
+/* Pati užpildymo juosta */
+.skills .progress-bar {
+  background: linear-gradient(90deg, #0284c7 0%, #38bdf8 100%) !important; /* Naujas modernus gradientas */
+  border-radius: 9999px !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.45);
+  transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 2 KOMPONENTAS: „Į viršų“ mygtukas (#scroll-top) */
+#scroll-top,
+.scroll-top {
+  width: 48px !important;                                       /* 1 savybė: fiksuotas plotis/aukštis */
+  height: 48px !important;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important; /* 2 savybė: elegantiškas tamsus gradientas */
+  border: 2px solid #38bdf8 !important;                         /* 3 savybė: akcentinė kraštinė */
+  border-radius: 14px !important;                               /* 4 savybė: modernus užapvalinimas */
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35) !important;   /* 5 savybė: tūrinis šešėlis */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.scroll-top i {
+  font-size: 26px !important;
+  color: #38bdf8 !important;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.scroll-top:hover {
+  background: linear-gradient(135deg, var(--custom-primary) 0%, var(--custom-primary-dark) 100%) !important;
+  border-color: #ffffff !important;
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 14px 30px rgba(2, 132, 199, 0.5) !important;
+}
+
+.scroll-top:hover i {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* PAPILDOMAS KOMPONENTAS: Navigacijos meniu (.navmenu) */
+.header .navmenu {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  border-radius: 50px !important;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+  padding: 10px 8px !important;
+}
+
+.navmenu a {
+  border-radius: 50px !important;
+  transition: all 0.25s ease !important;
+}
+
+.navmenu a:hover,
+.navmenu .active {
+  background: var(--custom-primary-light) !important;
+  color: var(--custom-primary-dark) !important;
+}
+
+/* ==========================================================================
+   5. PAPILDOMA UŽDUOTIS (4 balai)
+   1. Dviejų sąrašų stilius su CSS skaitikliais (counters) ir įdėtiniu sąrašu
+   2. Lentelės stilius su antrašte, zebra eilutėmis, padding ir lygiavimu centre
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   5.1. SĄRAŠŲ STILIAI (Numeruotas ir Nenumeruotas su CSS Counters ir Nested)
+   -------------------------------------------------------------------------- */
+
+/* 1.a. Numeruotas sąrašas su CSS skaitikliais (CSS Counters) */
+ol.custom-counter-list,
+.services ol {
+  list-style: none !important;
+  counter-reset: cv-counter;
+  padding-left: 0 !important;
+  margin: 20px 0;
+}
+
+ol.custom-counter-list > li,
+.services ol > li {
+  position: relative;
+  counter-increment: cv-counter;
+  padding-left: 48px;
+  margin-bottom: 18px;
+  min-height: 34px;
+  font-size: 1.025rem;
+  color: var(--custom-text-main);
+  line-height: 1.6;
+}
+
+/* Pseudo-elementas ::before su skaitikliu */
+ol.custom-counter-list > li::before,
+.services ol > li::before {
+  content: counter(cv-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--custom-primary) 0%, var(--custom-primary-dark) 100%);
+  color: #ffffff;
+  font-family: var(--custom-font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.35);
+}
+
+/* 1.a. Nenumeruotas sąrašas su dekoratyviu pseudo-elementu */
+ul.custom-bullet-list,
+.services .col-lg-6 > ul:not(.custom-counter-list ul) {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 20px 0;
+}
+
+ul.custom-bullet-list > li,
+.services .col-lg-6 > ul:not(.custom-counter-list ul) > li {
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 16px;
+  font-size: 1.025rem;
+  color: var(--custom-text-main);
+  line-height: 1.6;
+}
+
+ul.custom-bullet-list > li::before,
+.services .col-lg-6 > ul:not(.custom-counter-list ul) > li::before {
+  content: "✦";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  color: var(--custom-primary);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  text-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
+}
+
+/* 1.b. Įdėtinis sąrašas (Nested List) – vizualiai skiriasi nuo pagrindinio */
+ol.custom-counter-list ol,
+ol.custom-counter-list ul,
+ul.custom-bullet-list ul,
+ul.custom-bullet-list ol,
+.services ol ul,
+.services ol ol,
+.services ul ul {
+  list-style: none !important;
+  margin-top: 10px !important;
+  margin-bottom: 12px !important;
+  padding: 14px 18px 14px 34px !important;
+  background-color: #f1f5f9 !important;                                   /* Atskiras švelnus fonas */
+  border-left: 3px solid var(--custom-primary) !important;     /* Kairioji akcentinė kraštinė */
+  border-radius: 0 12px 12px 0 !important;                                /* Užapvalinti kampai */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Įdėtinio sąrašo elementai */
+ol.custom-counter-list ol li,
+ol.custom-counter-list ul li,
+ul.custom-bullet-list ul li,
+ul.custom-bullet-list ol li,
+.services ol ul li,
+.services ol ol li,
+.services ul ul li {
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--custom-text-muted);
+  margin-bottom: 8px;
+  padding-left: 20px;
+  min-height: auto;
+}
+
+ol.custom-counter-list ol li::before,
+ol.custom-counter-list ul li::before,
+ul.custom-bullet-list ul li::before,
+ul.custom-bullet-list ol li::before,
+.services ol ul li::before,
+.services ol ol li::before,
+.services ul ul li::before {
+  content: "▸" !important;
+  position: absolute !important;
+  left: 2px !important;
+  top: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  color: var(--custom-primary) !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5.2. LENTELĖS STILIUS (Table: Header, Zebra, Padding, Center Alignment, Hover)
+   -------------------------------------------------------------------------- */
+
+.table-responsive,
+.table-responsive-custom {
+  overflow-x: auto;
+  margin: 25px 0 20px 0;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06) !important;
+  border: 1px solid var(--custom-border-color) !important;
+  background: #ffffff;
+}
+
+table.custom-cv-table,
+.services table {
+  width: 100%;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: 0.975rem;
+  background: #ffffff;
+}
+
+/* 2.a. Antraštinės eilutės naujas stilius: išsiskiria iš kitų laukų */
+table.custom-cv-table thead tr,
+.services table thead tr {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  color: #ffffff !important;
+  font-family: var(--custom-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  border-bottom: 3px solid var(--custom-primary) !important;
+}
+
+table.custom-cv-table thead th,
+.services table thead th {
+  background: transparent !important;
+  color: #ffffff !important;
+  --bs-table-bg: transparent !important;
+  --bs-table-color: #ffffff !important;
+  font-weight: 700 !important;
+  border: none !important;
+  padding: 16px 20px !important;                               /* 2.c. Vienodi vidiniai tarpai */
+  text-align: center !important;                               /* 2.c. Turinio lygiavimas centre */
+  vertical-align: middle !important;
+}
+
+/* 2.c. Vienodi langelių vidiniai tarpai ir lygiavimas centre */
+table.custom-cv-table tbody td,
+.services table tbody td {
+  padding: 16px 20px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  color: var(--custom-text-main);
+}
+
+/* 2.b. „Zebra“ stilius (pakaitomis skirtingos eilučių spalvos) */
+table.custom-cv-table tbody tr:nth-child(even),
+table.custom-cv-table tbody tr:nth-child(even) > td,
+.services table tbody tr:nth-child(even),
+.services table tbody tr:nth-child(even) > td {
+  background-color: #f8fafc !important;
+  --bs-table-bg: #f8fafc !important;
+}
+
+table.custom-cv-table tbody tr:nth-child(odd),
+table.custom-cv-table tbody tr:nth-child(odd) > td,
+.services table tbody tr:nth-child(odd),
+.services table tbody tr:nth-child(odd) > td {
+  background-color: #ffffff !important;
+  --bs-table-bg: #ffffff !important;
+}
+
+/* 2.b. Eilutės :hover efektas */
+table.custom-cv-table tbody tr,
+.services table tbody tr {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+table.custom-cv-table tbody tr:hover,
+table.custom-cv-table tbody tr:hover > td,
+.services table tbody tr:hover,
+.services table tbody tr:hover > td {
+  background-color: #e0f2fe !important;                         /* Švelni akcentinė mėlyna spalva */
+  --bs-table-bg: #e0f2fe !important;
+}
+
+/* Lentelės pažymių / statuso ženkliukai */
+.badge-grade {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-family: var(--custom-font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+}
+
+.badge-tech {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--custom-primary-light);
+  color: var(--custom-primary-dark);
+  font-family: var(--custom-font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 2px;
+}
