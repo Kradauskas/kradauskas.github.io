@@ -9,11 +9,6 @@
    1. ŠRIFTŲ IMPORTAS IR TIPOGRAFIJA (Privaloma užduotis 2 punktas)
    ========================================================================== */
 
-/* Modernių Google Fonts šriftų importas:
-   - 'Plus Jakarta Sans' pagrindiniam tekstui (labai skaitomas, modernus sans-serif)
-   - 'Outfit' antraštėms (stilingas, geometriškas, reprezentatyvus)
-   - 'JetBrains Mono' kodui ir skaitinėms reikšmėms
-*/
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
 
 :root {
@@ -32,7 +27,6 @@
   --custom-border-color: #e2e8f0;
 }
 
-/* 2.a. Svetainės šrifto šeimos pakeitimas */
 body {
   font-family: var(--custom-font-sans) !important;
   color: var(--custom-text-main);
@@ -41,7 +35,6 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* 2.b. Antraščių stiliai (h1-h6): skirtingi dydžiai, storiai, spalvos */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--custom-font-heading) !important;
   color: var(--custom-text-main);
@@ -95,7 +88,6 @@ h6 {
   color: #64748b !important;
 }
 
-/* Sekcijų pagrindinės antraštės vizualinis atnaujinimas */
 .section-title h2 {
   font-size: 2.3rem !important;
   font-weight: 800 !important;
@@ -118,7 +110,6 @@ h6 {
   border-radius: 4px !important;
 }
 
-/* 2.c. Pastraipų stiliaus atnaujinimas */
 p {
   font-size: 1.025rem !important;
   line-height: 1.78 !important;
@@ -131,7 +122,6 @@ p {
    2. KOMPONENTŲ STILIAI: MYGTUKAI IR NUORODOS (Privaloma užduotis 3 punktas)
    ========================================================================== */
 
-/* 3.a. Mygtukai ir jų pseudo-klasės (:hover, :active) */
 button,
 .btn,
 .php-email-form button[type="submit"] {
@@ -153,7 +143,6 @@ button,
   outline: none;
 }
 
-/* Mygtuko :hover būsena */
 button:hover,
 .btn:hover,
 .php-email-form button[type="submit"]:hover {
@@ -163,7 +152,6 @@ button:hover,
   color: #ffffff !important;
 }
 
-/* Mygtuko :active būsena */
 button:active,
 .btn:active,
 .php-email-form button[type="submit"]:active {
@@ -171,7 +159,6 @@ button:active,
   box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25) !important;
 }
 
-/* 3.b. Nuorodos ir jų :hover stilius */
 a {
   color: var(--custom-primary);
   text-decoration: none;
@@ -185,7 +172,6 @@ a:hover {
   text-underline-offset: 4px;
 }
 
-/* Socialinių tinklų nuorodos (Hero ir Footer) */
 .hero .social-links a,
 .footer .social-links a {
   display: inline-flex;
@@ -214,7 +200,6 @@ a:hover {
    3. ELEMENTŲ IŠDĖSTYMAS IR TARPAI (Privaloma užduotis 4 punktas)
    ========================================================================== */
 
-/* 4.a. Tarpų keitimas (margin ir padding) „Apie”, „Patirtis”, „Atlikti darbai” */
 #about {
   padding-top: 85px !important;
   padding-bottom: 95px !important;
@@ -251,9 +236,6 @@ a:hover {
   gap: 14px;
 }
 
-/* 4.b. Turinio blokų išvaizdos patobulinimas: kraštinės, užapvalinimai (border-radius), šešėliai (box-shadow) */
-
-/* „Apie“ sekcijos profilio nuotrauka */
 #about img.rounded {
   border-radius: 20px !important;
   border: 4px solid #ffffff;
@@ -265,7 +247,6 @@ a:hover {
   transform: scale(1.02);
 }
 
-/* „Apie“ informacinė kortelė */
 #about .content {
   background: #ffffff;
   border-radius: 18px;
@@ -273,7 +254,6 @@ a:hover {
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
 }
 
-/* „Patirtis“ (Resume) elementų blokai */
 .resume-item {
   background: #ffffff;
   padding: 24px 28px !important;
@@ -318,7 +298,6 @@ a:hover {
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
 }
 
-/* Paslaugų / informacijos / multimedijos blokai */
 .service-item,
 .services .card,
 .contact .info-item {
@@ -337,16 +316,6 @@ a:hover {
   box-shadow: 0 14px 32px rgba(2, 132, 199, 0.12) !important;
 }
 
-/* ==========================================================================
-   4. DVIEJŲ PASIRINKTŲ KOMPONENTŲ STILIAI (Privaloma užduotis 5 punktas)
-   Pasirinkti komponentai:
-   1) Progreso juostos (.progress, .progress-bar-wrap, .progress-bar)
-   2) „Į viršų“ mygtukas (#scroll-top)
-   Papildomai: Navigacijos juostos patobulinimas (.navmenu)
-   Kiekvienam pakeista bent po 3 savybes: fonas, kraštinės, užapvalinimai, šešėliai.
-   ========================================================================== */
-
-/* 1 KOMPONENTAS: Progreso juostos (Skills / Gebėjimai) */
 .skills .progress {
   height: 24px !important;
   background: transparent !important;
@@ -380,7 +349,6 @@ a:hover {
   padding: 1px;
 }
 
-/* Pati užpildymo juosta */
 .skills .progress-bar {
   background: linear-gradient(90deg, #0284c7 0%, #38bdf8 100%) !important; /* Naujas modernus gradientas */
   border-radius: 9999px !important;
@@ -388,7 +356,6 @@ a:hover {
   transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* 2 KOMPONENTAS: „Į viršų“ mygtukas (#scroll-top) */
 #scroll-top,
 .scroll-top {
   width: 48px !important;                                       /* 1 savybė: fiksuotas plotis/aukštis */
@@ -418,7 +385,6 @@ a:hover {
   transform: translateY(-2px);
 }
 
-/* PAPILDOMAS KOMPONENTAS: Navigacijos meniu (.navmenu) */
 .header .navmenu {
   background: rgba(255, 255, 255, 0.92) !important;
   backdrop-filter: blur(12px) !important;
@@ -440,17 +406,6 @@ a:hover {
   color: var(--custom-primary-dark) !important;
 }
 
-/* ==========================================================================
-   5. PAPILDOMA UŽDUOTIS (4 balai)
-   1. Dviejų sąrašų stilius su CSS skaitikliais (counters) ir įdėtiniu sąrašu
-   2. Lentelės stilius su antrašte, zebra eilutėmis, padding ir lygiavimu centre
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   5.1. SĄRAŠŲ STILIAI (Numeruotas ir Nenumeruotas su CSS Counters ir Nested)
-   -------------------------------------------------------------------------- */
-
-/* 1.a. Numeruotas sąrašas su CSS skaitikliais (CSS Counters) */
 ol.custom-counter-list,
 .services ol {
   list-style: none !important;
@@ -471,7 +426,6 @@ ol.custom-counter-list > li,
   line-height: 1.6;
 }
 
-/* Pseudo-elementas ::before su skaitikliu */
 ol.custom-counter-list > li::before,
 .services ol > li::before {
   content: counter(cv-counter);
@@ -492,7 +446,6 @@ ol.custom-counter-list > li::before,
   box-shadow: 0 4px 10px rgba(2, 132, 199, 0.35);
 }
 
-/* 1.a. Nenumeruotas sąrašas su dekoratyviu pseudo-elementu */
 ul.custom-bullet-list,
 .services .col-lg-6 > ul:not(.custom-counter-list ul) {
   list-style: none !important;
@@ -522,7 +475,6 @@ ul.custom-bullet-list > li::before,
   text-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
 }
 
-/* 1.b. Įdėtinis sąrašas (Nested List) – vizualiai skiriasi nuo pagrindinio */
 ol.custom-counter-list ol,
 ol.custom-counter-list ul,
 ul.custom-bullet-list ul,
@@ -577,10 +529,6 @@ ul.custom-bullet-list ol li::before,
   font-weight: 700 !important;
 }
 
-/* --------------------------------------------------------------------------
-   5.2. LENTELĖS STILIUS (Table: Header, Zebra, Padding, Center Alignment, Hover)
-   -------------------------------------------------------------------------- */
-
 .table-responsive,
 .table-responsive-custom {
   overflow-x: auto;
@@ -601,7 +549,6 @@ table.custom-cv-table,
   background: #ffffff;
 }
 
-/* 2.a. Antraštinės eilutės naujas stilius: išsiskiria iš kitų laukų */
 table.custom-cv-table thead tr,
 .services table thead tr {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
@@ -627,7 +574,6 @@ table.custom-cv-table thead th,
   vertical-align: middle !important;
 }
 
-/* 2.c. Vienodi langelių vidiniai tarpai ir lygiavimas centre */
 table.custom-cv-table tbody td,
 .services table tbody td {
   padding: 16px 20px !important;
@@ -637,7 +583,6 @@ table.custom-cv-table tbody td,
   color: var(--custom-text-main);
 }
 
-/* 2.b. „Zebra“ stilius (pakaitomis skirtingos eilučių spalvos) */
 table.custom-cv-table tbody tr:nth-child(even),
 table.custom-cv-table tbody tr:nth-child(even) > td,
 .services table tbody tr:nth-child(even),
@@ -654,7 +599,6 @@ table.custom-cv-table tbody tr:nth-child(odd) > td,
   --bs-table-bg: #ffffff !important;
 }
 
-/* 2.b. Eilutės :hover efektas */
 table.custom-cv-table tbody tr,
 .services table tbody tr {
   transition: background-color 0.2s ease, transform 0.2s ease;
@@ -668,7 +612,6 @@ table.custom-cv-table tbody tr:hover > td,
   --bs-table-bg: #e0f2fe !important;
 }
 
-/* Lentelės pažymių / statuso ženkliukai */
 .badge-grade {
   display: inline-block;
   padding: 5px 12px;
@@ -692,17 +635,6 @@ table.custom-cv-table tbody tr:hover > td,
   font-weight: 600;
   margin: 2px;
 }
-
-/* ==========================================================================
-   6. 10 LABORATORINIS DARBAS: GRAFICOS OBJEKTŲ PROGRAMAVIMAS IR ANIMACIJOS
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   6.1. PRIVALOMA UŽDUOTIS 1: Ne mažiau kaip 2 naujos CSS animacijos (@keyframes)
-   - 1 animacija (socialFloatPulse): 4 būsenos (0%, 30%, 60%, 100%), keičiamos 3 savybės
-     (transform, box-shadow, border-color) socialinių tinklų ikonėlėms.
-   - 2 animacija (profileFloatGlow): profilio nuotraukos tolygus judėjimas ir švytėjimas.
-   -------------------------------------------------------------------------- */
 
 @keyframes socialFloatPulse {
   0% {
@@ -767,11 +699,6 @@ table.custom-cv-table tbody tr:hover > td,
 #about img.rounded {
   animation: profileFloatGlow 4.5s ease-in-out infinite;
 }
-
-/* --------------------------------------------------------------------------
-   6.2. PRIVALOMA UŽDUOTIS 2: Dekoratyvinis CSS krovimo indikatorius „Paslaugų“ skiltyje
-   Įgyvendintas besisukantis apskritimas (Spinner) ir pulsuojantys taškai (Pulsing Dots)
-   -------------------------------------------------------------------------- */
 
 .services-loading-indicator {
   display: inline-flex;
@@ -842,11 +769,6 @@ table.custom-cv-table tbody tr:hover > td,
     background-color: var(--custom-primary-dark);
   }
 }
-
-/* --------------------------------------------------------------------------
-   6.3. PRIVALOMA UŽDUOTIS 3: Dekoratyviniai animuoti pseudo-elementai (::before ir ::after)
-   Pagrindinėms skilčių antraštėms (.section-title h2) be papildomų HTML elementų
-   -------------------------------------------------------------------------- */
 
 .section-title h2 {
   padding-bottom: 18px !important;
