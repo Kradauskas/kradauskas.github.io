@@ -960,3 +960,108 @@ table.custom-cv-table tbody tr:hover > td,
   }
 }
 
+
+/* ==========================================================================
+   11 LD: KONTAKTŲ FORMA
+   ========================================================================== */
+
+.cv-form .cv-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--custom-text-main);
+}
+
+.contact .cv-form .form-control {
+  font-size: 0.95rem;
+  padding: 11px 14px;
+  border: 1px solid var(--custom-border-color);
+  border-radius: 10px;
+  background-color: var(--custom-bg-card);
+  color: var(--custom-text-main);
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact .cv-form .form-control:focus {
+  border-color: var(--custom-primary);
+  box-shadow: 0 0 0 3px var(--custom-primary-light);
+}
+
+.contact .cv-form .form-control.is-invalid {
+  border-color: #dc2626;
+  background-image: none;
+}
+
+.contact .cv-form .form-control.is-invalid:focus {
+  box-shadow: 0 0 0 3px #fee2e2;
+}
+
+.contact .cv-form .form-control.is-valid {
+  border-color: #16a34a;
+  background-image: none;
+}
+
+.cv-form .cv-error {
+  min-height: 1.25rem;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #dc2626;
+}
+
+.cv-form .cv-rating-intro {
+  margin: 8px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--custom-border-color);
+  font-weight: 600;
+  color: var(--custom-text-muted);
+}
+
+.cv-form .cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cv-form button[type="submit"]:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.cv-form .cv-btn-secondary {
+  color: var(--custom-primary) !important;
+  background: var(--custom-bg-card) !important;
+  border: 1px solid var(--custom-primary) !important;
+  box-shadow: none !important;
+}
+
+.cv-form .cv-btn-secondary:hover {
+  color: #ffffff !important;
+  background: var(--custom-primary) !important;
+}
+
+.cv-form .cv-result {
+  margin-top: 24px;
+  padding: 18px 22px;
+  border-left: 4px solid var(--custom-primary);
+  border-radius: 10px;
+  background: var(--custom-primary-light);
+  color: var(--custom-text-main);
+}
+
+.cv-form .cv-result p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.6;
+}
+
+.cv-form .cv-result .cv-average {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(2, 132, 199, 0.25);
+  font-weight: 700;
+}

@@ -451,27 +451,60 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Jūsų vardas" required="">
+            <form id="contact-form" class="php-email-form cv-form" novalidate data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-3">
+                <div class="col-md-6 cv-field">
+                  <label for="cf-vardas">Vardas</label>
+                  <input type="text" id="cf-vardas" name="vardas" class="form-control" placeholder="Vardenis" autocomplete="given-name" required>
+                  <div class="cv-error" aria-live="polite"></div>
                 </div>
-                <div class="col-md-6">
-                  <input type="email" class="form-control" name="email" placeholder="Jūsų el. paštas" required="">
+                <div class="col-md-6 cv-field">
+                  <label for="cf-pavarde">Pavardė</label>
+                  <input type="text" id="cf-pavarde" name="pavarde" class="form-control" placeholder="Pavardenis" autocomplete="family-name" required>
+                  <div class="cv-error" aria-live="polite"></div>
                 </div>
+                <div class="col-md-6 cv-field">
+                  <label for="cf-email">El. paštas</label>
+                  <input type="email" id="cf-email" name="email" class="form-control" placeholder="vardenis@pastas.lt" autocomplete="email" required>
+                  <div class="cv-error" aria-live="polite"></div>
+                </div>
+                <div class="col-md-6 cv-field">
+                  <label for="cf-telefonas">Telefono numeris</label>
+                  <input type="tel" id="cf-telefonas" name="telefonas" class="form-control" placeholder="+370 6xx xxxxx" inputmode="numeric" maxlength="14" autocomplete="tel" required>
+                  <div class="cv-error" aria-live="polite"></div>
+                </div>
+                <div class="col-md-12 cv-field">
+                  <label for="cf-adresas">Adresas</label>
+                  <input type="text" id="cf-adresas" name="adresas" class="form-control" placeholder="Gatvė, namo nr., miestas" autocomplete="street-address" required>
+                  <div class="cv-error" aria-live="polite"></div>
+                </div>
+
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Tema" required="">
+                  <p class="cv-rating-intro">Įvertinkite nuo 1 iki 10:</p>
                 </div>
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Žinutė" required=""></textarea>
+                <div class="col-md-4 cv-field">
+                  <label for="cf-q1">Svetainės dizainas</label>
+                  <input type="number" id="cf-q1" name="q1" class="form-control" min="1" max="10" step="1" placeholder="1–10" required>
+                  <div class="cv-error" aria-live="polite"></div>
                 </div>
-                <div class="col-md-12 text-center">
-                  <div class="loading">Kraunama...</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Jūsų žinutė sėkmingai išsiųsta. Ačiū!</div>
-                  <button type="submit">Siųsti žinutę</button>
+                <div class="col-md-4 cv-field">
+                  <label for="cf-q2">Informacijos naudingumas</label>
+                  <input type="number" id="cf-q2" name="q2" class="form-control" min="1" max="10" step="1" placeholder="1–10" required>
+                  <div class="cv-error" aria-live="polite"></div>
+                </div>
+                <div class="col-md-4 cv-field">
+                  <label for="cf-q3">Ar rekomenduotumėte mane?</label>
+                  <input type="number" id="cf-q3" name="q3" class="form-control" min="1" max="10" step="1" placeholder="1–10" required>
+                  <div class="cv-error" aria-live="polite"></div>
+                </div>
+
+                <div class="col-md-12 cv-actions">
+                  <button type="submit" id="cf-submit" disabled>Siųsti</button>
+                  <button type="button" id="cf-clear" class="cv-btn-secondary">Išvalyti</button>
                 </div>
               </div>
+
+              <div id="cf-result" class="cv-result" hidden aria-live="polite"></div>
             </form>
           </div>
         </div>
@@ -508,7 +541,6 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -520,6 +552,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 
