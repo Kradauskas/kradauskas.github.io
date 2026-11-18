@@ -1,8 +1,4 @@
-/**
- * 11 laboratorinis darbas: JavaScript formos
- * Kontaktų formos duomenų surinkimas, validacija realiu laiku,
- * telefono numerio formatavimas ir formos išvalymas.
- */
+
 (function () {
   "use strict";
 
@@ -23,10 +19,8 @@
     q2: document.getElementById("cf-q2"),
     q3: document.getElementById("cf-q3"),
   };
-
+  
   const ratingKeys = ["q1", "q2", "q3"];
-
-  // Lauko pavadinimai rezultatų išvedimui
   const labels = {
     vardas: "Vardas",
     pavarde: "Pavardė",
@@ -38,18 +32,12 @@
     q3: "Ar rekomenduotumėte mane",
   };
 
-  // Laukai, kuriuos vartotojas jau palietė: klaidos rodomos tik jiems
   const touched = new Set();
-
-  /* ---------------------------------------------------------------------
-   * Validacija
-   * ------------------------------------------------------------------- */
 
   const LETTERS_ONLY = /^\p{L}+$/u;
   const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const PHONE = /^\+370 6\d{2} \d{5}$/;
 
-  // Grąžina klaidos tekstą arba tuščią eilutę, jei laukas teisingas
   function validate(key) {
     const value = fields[key].value.trim();
 
@@ -91,11 +79,7 @@
     const allValid = Object.keys(fields).every((key) => validate(key) === "");
     submitBtn.disabled = !allValid;
   }
-
-  /* ---------------------------------------------------------------------
-   * Telefono numerio formatavimas: +370 6xx xxxxx
-   * ------------------------------------------------------------------- */
-
+  
   const PHONE_PREFIX = "+370 ";
   const PHONE_DIGITS = 8; // 6xx xxxxx
 
@@ -127,10 +111,6 @@
     fields.telefonas.value = formatPhone(fields.telefonas.value);
   });
 
-  /* ---------------------------------------------------------------------
-   * Įvykiai
-   * ------------------------------------------------------------------- */
-
   Object.keys(fields).forEach((key) => {
     const input = fields[key];
 
@@ -146,7 +126,6 @@
     });
   });
 
-  // Duomenų surinkimas į objektą
   function collectData() {
     const data = {};
     Object.keys(fields).forEach((key) => {
@@ -198,7 +177,6 @@
     renderResult(data, avg);
   });
 
-  // Formos išvalymas: laukai, rezultatai, vidurkis ir klaidos
   clearBtn.addEventListener("click", () => {
     form.reset();
     touched.clear();
