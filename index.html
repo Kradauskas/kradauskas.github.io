@@ -43,6 +43,7 @@
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Patirtis</span></a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Atlikti darbai</span></a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Paslaugos</span></a></li>
+        <li><a href="#pazanga"><i class="bi bi-trophy navicon"></i><span>Pažanga</span></a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Kontaktai</span></a></li>
       </ul>
     </nav>
@@ -415,6 +416,68 @@
       </div>
     </section>
 
+    <section id="pazanga" class="pazanga section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pažanga</h2>
+        <p>Įgūdžių progreso lenta: keiskite įgūdžio būseną ir stebėkite, kaip auga patirties taškai, lygis ir rangas</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="pazanga-profilis">
+          <img id="vartotojo-ikonele" src="assets/img/avataras-1.svg" alt="Vartotojo ikonėlė">
+          <div class="pazanga-info">
+            <p class="pazanga-rangas">Lygis <span id="xp-lygis">1</span> · <span id="xp-rangas">Pradedantysis</span></p>
+            <p class="pazanga-xp"><span id="xp-suma">0</span> XP</p>
+            <div class="xp-juosta"><div id="xp-juosta" class="xp-juosta-uzpildas"></div></div>
+            <p id="xp-juostos-tekstas" class="xp-juostos-tekstas"></p>
+          </div>
+          <div class="pazanga-statistika">
+            <div><strong id="stat-viso">0</strong><span>Iš viso įgūdžių</span></div>
+            <div><strong id="stat-atlikta">0</strong><span>Atlikta</span></div>
+            <div><strong id="stat-procentai">0%</strong><span>Atlikta procentais</span></div>
+          </div>
+        </div>
+
+        <div class="kanban">
+          <div class="kanban-stulpelis">
+            <h3><i class="bi bi-lightbulb"></i> Planuojama</h3>
+            <div id="planuojama" class="kanban-sarasas"></div>
+          </div>
+          <div class="kanban-stulpelis">
+            <h3><i class="bi bi-book"></i> Mokomasi</h3>
+            <div id="mokomasi" class="kanban-sarasas"></div>
+          </div>
+          <div class="kanban-stulpelis">
+            <h3><i class="bi bi-check2-circle"></i> Atlikta</h3>
+            <div id="atlikta" class="kanban-sarasas"></div>
+          </div>
+        </div>
+
+        <h3 class="pasiekimai-pavadinimas">Pasiekimai</h3>
+        <div class="pasiekimai">
+          <div id="pasiekimas-atradejas" class="pasiekimas">
+            <i class="bi bi-compass"></i>
+            <h4>Įgūdžių atradėjas</h4>
+            <p>Atlik bent 1 įgūdį</p>
+          </div>
+          <div id="pasiekimas-meistras" class="pasiekimas">
+            <i class="bi bi-hammer"></i>
+            <h4>Įgūdžių meistras</h4>
+            <p>Atlik bent 4 įgūdžius</p>
+          </div>
+          <div id="pasiekimas-ekspertas" class="pasiekimas">
+            <i class="bi bi-gem"></i>
+            <h4>Įgūdžių ekspertas</h4>
+            <p>Pasiek 4 lygį</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button id="atstatyti" type="button" class="pazanga-atstatyti">Atstatyti pradinę būseną</button>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact section">
       <div class="container section-title" data-aos="fade-up">
@@ -553,6 +616,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/skills.js"></script>
 
 </body>
 
