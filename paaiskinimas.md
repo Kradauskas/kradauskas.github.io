@@ -72,7 +72,7 @@ Jei saugykloje nieko nėra, `getItem` grąžina `null`, `JSON.parse(null)` irgi 
 3. **`JSON.parse(null) || ...`** gudrybė Local Storage atvejui.
 4. **Progreso juostos animacija** – JS tik keičia `width`, o sklandų judėjimą daro CSS `transition: width 0.6s`.
 5. **Kortelės „įkritimo“ animacija** – kiekviena naujai sukurta kortelė gauna CSS `@keyframes`, todėl persikėlimas matosi vizualiai.
-6. **Ikonėlės** sukurtos su užduotyje nurodytu generatoriumi (getavataaars.com). Tai tas pats personažas, keičiasi fonas ir aksesuarai: 1 lygis – mėlynas rombas, 2 – mėlynas apskritimas, 3 – saulėlydžio fonas, 4 – raudonas fonas ir skrybėlė.
+6. **Ikonėlės** sukurtos su užduotyje nurodytu generatoriumi (getavataaars.com). Personažas „auga“ kartu su lygiu: 1 – juodi marškinėliai, paprasta šypsena; 2 – megztinis su apykakle, šelmiška šypsena; 3 – nupliko, užsiaugino barzdelę, mirkteli; 4 – didelė barzda, akiniai nuo saulės, švarkas – tikras profesionalas.
 
 ## Kaip demonstruoti
 1. Atidaryti „Pažanga“ – pradžioje 120 XP, 2 lygis „Praktikantas“, juosta 70%.
